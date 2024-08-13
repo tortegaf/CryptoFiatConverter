@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Currency Converter</title>
+    <title>FiatConverter</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Currency Converter</h1>
+      <div class="header">
+        <h1>Fiat Converter</h1>
+        <button id="theme-toggle" class="theme-toggle">☀️</button>
+      </div>
       <form id="converter-form">
         <div class="form-group">
           <label for="from-currency">From:</label>
           <select id="from-currency"></select>
-          <input type="number" id="from-amount" placeholder="Enter amount" />
+          <input type="number" id="from-amount" />
         </div>
         <div class="form-group">
           <label for="to-currency">To:</label>
@@ -21,6 +24,7 @@
           <input type="number" id="to-amount" />
         </div>
       </form>
+      <div class="author-signature">By: Tomás Ortega</div>
     </div>
     <script src="script.js"></script>
   </body>

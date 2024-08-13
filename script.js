@@ -16,7 +16,7 @@ document
   .addEventListener("change", () => convertCurrency("to"));
 
 async function populateCurrencySelectors() {
-  const apiKey = "fddfd8da0235038e086e6be0"; // ExchangeRateAPI Key
+  const apiKey = "fddfd8da0235038e086e6be0";
   const response = await fetch(
     `https://v6.exchangerate-api.com/v6/${apiKey}/codes`
   );
@@ -34,7 +34,6 @@ async function populateCurrencySelectors() {
       toCurrencySelect.appendChild(optionElement);
     });
 
-    // Set default values if needed
     fromCurrencySelect.value = "USD";
     toCurrencySelect.value = "EUR";
   } else {
@@ -62,7 +61,7 @@ async function convertCurrency(direction) {
 }
 
 async function convertFiatToFiat(fromCurrency, toCurrency, amount) {
-  const apiKey = "fddfd8da0235038e086e6be0"; // ExchangeRateAPI Key
+  const apiKey = "fddfd8da0235038e086e6be0";
   const response = await fetch(
     `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}`
   );
@@ -79,3 +78,24 @@ function formatResult(result) {
   const strResult = result.toString();
   return strResult.length > 20 ? strResult.slice(0, 20) : strResult;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggleButton = document.getElementById("theme-toggle");
+
+  const currentTheme = localStorage.getItem("theme") || "light-mode";
+  document.body.classList.add(currentTheme);
+
+  themeToggleButton.textContent = currentTheme === "dark-mode" ? "🌙" : "☀️";
+
+  themeToggleButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+
+    const newTheme = document.body.classList.contains("dark-mode")
+      ? "dark-mode"
+      : "light-mode";
+    localStorage.setItem("theme", newTheme);
+
+    this.textContent = newTheme === "dark-mode" ? "🌙" : "☀️";
+  });
+});
