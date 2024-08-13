@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoFiat Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="converter-container">
+      <h1>CryptoFiat Converter</h1>
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="fromCurrency">
+        <!-- Monedas fiat y criptomonedas -->
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+        <!-- Añadir más opciones según sea necesario -->
+      </select>
+      <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+        <!-- Añadir más opciones según sea necesario -->
+      </select>
+      <button onclick="convertCurrency()">Convert</button>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
