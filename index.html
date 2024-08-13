@@ -3,30 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CryptoFiat Converter</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="converter-container">
-      <h1>CryptoFiat Converter</h1>
-      <input type="number" id="amount" placeholder="Amount" required />
-      <select id="fromCurrency">
-        <!-- Monedas fiat y criptomonedas -->
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="BTC">BTC</option>
-        <option value="ETH">ETH</option>
-        <!-- Añadir más opciones según sea necesario -->
-      </select>
-      <select id="toCurrency">
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="BTC">BTC</option>
-        <option value="ETH">ETH</option>
-        <!-- Añadir más opciones según sea necesario -->
-      </select>
-      <button onclick="convertCurrency()">Convert</button>
-      <div id="result"></div>
+    <div class="container">
+      <h1>Currency Converter</h1>
+      <form id="converter-form">
+        <div class="form-group">
+          <label for="from-currency">From:</label>
+          <select id="from-currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="BTC">BTC</option>
+            <!-- Add more currencies as needed -->
+          </select>
+          <input type="number" id="from-amount" placeholder="Enter amount" />
+        </div>
+        <div class="form-group">
+          <label for="to-currency">To:</label>
+          <select id="to-currency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="ETH">ETH</option>
+            <!-- Add more currencies as needed -->
+          </select>
+          <input type="text" id="to-amount" readonly />
+        </div>
+        <button type="button" id="convert-btn">Convert</button>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
