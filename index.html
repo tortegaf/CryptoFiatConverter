@@ -12,25 +12,14 @@
       <form id="converter-form">
         <div class="form-group">
           <label for="from-currency">From:</label>
-          <select id="from-currency">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="BTC">BTC</option>
-            <!-- Add more currencies as needed -->
-          </select>
+          <select id="from-currency"></select>
           <input type="number" id="from-amount" placeholder="Enter amount" />
         </div>
         <div class="form-group">
           <label for="to-currency">To:</label>
-          <select id="to-currency">
-            <option value="EUR">EUR</option>
-            <option value="USD">USD</option>
-            <option value="ETH">ETH</option>
-            <!-- Add more currencies as needed -->
-          </select>
-          <input type="text" id="to-amount" readonly />
+          <select id="to-currency"></select>
+          <input type="number" id="to-amount" />
         </div>
-        <button type="button" id="convert-btn">Convert</button>
       </form>
     </div>
     <script src="script.js"></script>
